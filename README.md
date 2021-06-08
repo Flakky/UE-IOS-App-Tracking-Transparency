@@ -9,6 +9,8 @@ A plugin with App Tracking Transparency integration for an Unreal Engine project
 
 3. Somewhere before analytics initialization call **RequestIOSAppTracking** from C++ or Blueprints.
 
+4. In Project Settings > IOSAppTrackingTransparency setup a description, that will be shown to a user in request dialog window.
+
 ## Available functions
 
 **RequestIOSAppTracking()** - Promts user to give IDFA usage permission. Should output EIOSAppTrackingAuthStatus with the result.
