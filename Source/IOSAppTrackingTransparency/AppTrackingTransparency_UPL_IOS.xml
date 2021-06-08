@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root xmlns:android="http://schemas.ios.com/res/ios">
+	<init>
+		<log text="IOS App Tracking Transparency Initialization"/>
+		
+		<setStringFromProperty result="TrackingRequestDescription" ini="Engine" section="/Script/IOSAppTrackingTransparency.IOSAppTrackingTransparencySettings" property="TrackingRequestDescription" default=""/>
+
+	</init>
+
+	<iosPListUpdates>
+		<loopElements tag="$">
+			<setStringFromTag result="CurrentTag" tag="$"/>
+			<setBoolIsEqual   result="isRootDictionary" arg1="$S(CurrentTag)" arg2="dict"/>
+			<!-- Process root dict only -->
+			<if condition="isRootDictionary">
+				<true>
+					<setElement result="UserTrackingUsageDescriptionKey" value="key" text="NSUserTrackingUsageDescription"/>
+					<addElement tag="$" name="UserTrackingUsageDescriptionKey"/>
+					<setElement result="UserTrackingUsageDescriptionValue" value="string" text="$S(TrackingRequestDescription)"/>
+					<addElement tag="$" name="UserTrackingUsageDescriptionValue"/>
+				</true>
+			</if>
+		</loopElements>
+	</iosPListUpdates>
+
+</root>
