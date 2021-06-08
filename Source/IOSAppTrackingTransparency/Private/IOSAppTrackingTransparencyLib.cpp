@@ -12,23 +12,7 @@ EIOSAppTrackingAuthStatus UIOSAppTrackingTransparencyLib::RequestIOSAppTracking(
 #if PLATFORM_IOS
 	if(@available(iOS 14.0, *))
 	{
-		[ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
-            switch ([ATTrackingManager trackingAuthorizationStatus])
-			{
-			case ATTrackingManagerAuthorizationStatusAuthorized:
-			    return EIOSAppTrackingAuthStatus::Authorized;
-			    break;
-			case ATTrackingManagerAuthorizationStatusDenied:
-			    return EIOSAppTrackingAuthStatus::Denied;
-			    break;
-			case ATTrackingManagerAuthorizationStatusRestricted:
-			    return EIOSAppTrackingAuthStatus::Restricted;
-			    break;
-			case ATTrackingManagerAuthorizationStatusNotDetermined:
-			    return EIOSAppTrackingAuthStatus::NotDetermined;
-			    break;
-			}
-        }];
+		[ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {}];
     }
 #endif
 	return GetIOSAppTrackingAuthStatus();
