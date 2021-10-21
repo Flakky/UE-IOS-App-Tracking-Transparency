@@ -1,6 +1,8 @@
 # Unreal Engine IOS App Tracking Transparency Plugin
 A plugin with App Tracking Transparency integration for an Unreal Engine project.
 
+**UE Versions**: 4.25, 4.26, 4.27
+
 ## Usage
 
 1. First of all, add this plugin to your project in Plugins folder (Ex. Project/Plugins/UEIOSAppTrackingTransparency).
